@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marias | OFFICIAL </title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body onload="myFunction()">
+    <div id="loading"></div>
+    <div class="wrapper">
+        <form action="">
+            <h2>Welcome to Marias!<br><br></h2>
+            <div class="input-group">
+                <span class="icon"></span>
+                <a href="USER LOGIN PAGE.html"class="btn"><center>
+                    <ion-icon name="person"></ion-icon>Login as Customer</center>
+                </a> 
+                <br><br>
+            </div>
+            <a href="ADMIN LOGIN PAGE.html" class="btn1"><center>
+                <ion-icon name="key-outline"></ion-icon>Login as Administrator</center>
+            </a>
+        </form>
+    </div>
+    <script>
+		var preloader = document.getElementById('loading');
+
+function myFunction() {
+    // Delay hiding the loading overlay (adjust the time as needed)
+    setTimeout(function() {
+        preloader.style.display = 'none';
+    }, 3000); // Hide after 4 seconds
+}
+
+window.onbeforeunload = function(event) {
+        if (!buttonClicked) {
+            // Standard message for most browsers
+            const message = "Data will be lost if you leave the page. Are you sure?";
+            
+            // For some browsers, return a string to display the message
+            event.returnValue = message;
+            
+            // For other browsers, set a custom property on the event
+            return message;
+        }
+    };
+	</script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

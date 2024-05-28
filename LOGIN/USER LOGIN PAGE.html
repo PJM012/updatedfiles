@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria's| LOGIN </title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body onload="myFunction1()">
+    <div id="loading"></div>
+    <div class="wrapper">
+        <form action="">
+            <h2>Hungry?<br> Start Ordering Now!<br></h2>
+            <div class="input-group">
+                <span class="icon">
+                    <ion-icon name="person"></ion-icon>
+                </span>
+                <input type="text" id="userName" placeholder="Enter your name" required>
+            </div>
+            <button type="submit" onclick="submitForm()" class="btn2">Submit</button>
+        </form>
+    </div>
+    <script>
+		var preloader = document.getElementById('loading');
+
+function myFunction1() {
+    setTimeout(function() {
+        preloader.style.display = 'none';
+    }, 2000); // Hide after 4 seconds
+}
+
+window.onbeforeunload = function(event) {
+            // Check if the submit button was clicked
+            if (event.target.activeElement.tagName !== 'BUTTON') {
+                return "Data will be lost if you leave the page. Are you sure?";
+            }
+        };
+
+        // Function to submit the form
+        function submitForm() {
+    
+            }
+</script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
