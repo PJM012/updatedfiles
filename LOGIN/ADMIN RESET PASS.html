@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN | Reset Password </title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body onload="myFunction3()">
+    <div id="loading"></div>
+    <div class="wrapper">
+        <form id="resetPasswordForm" action="update-password.php" method="post" onsubmit="return validateResetPassword()">
+            <h2>Reset Password</h2>
+            <div class="input-group">
+                <span class="icon">
+                    <ion-icon name="mail"></ion-icon>
+                </span>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <span class="icon">
+                    <ion-icon name="lock-closed"></ion-icon>
+                </span>
+                <input type="password" id="newPassword" placeholder="New Password" required>
+            </div>
+            <div class="input-group">
+                <span class="icon">
+                    <ion-icon name="lock-closed"></ion-icon>
+                </span>
+                <input type="password" id="confirmPassword" placeholder="Confirm New Password" required>
+            </div>
+            <button type="submit" class="btn3">Reset Password</button>
+        </form>
+    </div>
+    <script>
+		var preloader = document.getElementById('loading');
+
+function myFunction3() {
+    // Delay hiding the loading overlay (adjust the time as needed)
+    setTimeout(function() {
+        preloader.style.display = 'none';
+    }, 3000); // Hide after 4 seconds
+}
+
+window.onbeforeunload = function(event) {
+            // Check if the submit button was clicked
+            if (event.target.activeElement.tagName !== 'BUTTON') {
+                return "Data will be lost if you leave the page. Are you sure?";
+            }
+        };
+
+        // Function to submit the form
+        function submitForm() {
+
+        }
+	</script>
+  <script>
+    function validateResetPassword() {
+        var newPassword = document.getElementById('newPassword').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (newPassword !== confirmPassword) {
+            alert("The new passwords do not match. Please try again.");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }
+</script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
