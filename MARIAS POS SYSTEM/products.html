@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="assets/pos style.css">
+
+	<title>MARIA's | SALES </title>
+	</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxl-magento bx-burst' style='color:#0c0c0c' ></i>
+			<span class="text">MARIA's POS</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="#">
+				<a href="index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="sales.html">
+					<i class='bx bx-shopping-bag'></i>
+					<span class="text">Sales</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="products.html">
+					<i class='bx bxs-doughnut-chart bx-spin' style='color:orange' ></i>
+					<span class="text">Products</span>
+				</a>
+			</li>
+			<li>
+				<a href="Sales Reports.html">
+					<i class='bx bxs-report' ></i>
+					<span class="text">Sales Reports</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="settings.html">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout" onclick="logout()">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<h1>Welcome!</h1>
+				<div style="font-size: smaller;" class="user-info">
+					<span style="border-style: solid; border-top: 10px; border-bottom: 10px; border-color: orange; padding: 6px;"  id="date-time"></span>
+				  </div>
+        </nav>
+		
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Product Management</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="products.html">Products</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+        <!-- CONTENT -->
+		<div class="container">
+			<div class="total-products">Total Products: <span id="totalProducts">0</span></div>
+			<input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Search for product name...">
+			<table id="productsTable" class="responsive-table">
+				<thead>
+					<tr>
+						<th>Product Name</th>
+						<th>Description</th>
+						<th>Original Price</th>
+						<th>Selling Price</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<button id="showAddProductFormButton">Add More Products <i id="arrowIcon" class="bx-down-arrow"></i></button>
+			<div id="addProductForm">
+			<!-- Your form fields for product name, description, selling price, original price -->
+			<input type="text" id="productName" placeholder="Product Name">
+			<input type="text" id="productDescription" placeholder="Product Description">
+			<input type="number" id="productOgprice" placeholder="Original Price">
+			<input type="number" id="productPrice" placeholder="Selling Price">
+			<button id="addButton" onclick="addProduct()">Save Changes</button>
+			</div>
+
+		</main>
+	</section>
+	
+	
+</div>
+
+
+    <script src="assets/js/add products.js"></script>
+    <script src="assets/js/main.js"></script>
+	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
