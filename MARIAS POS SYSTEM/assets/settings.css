@@ -1,0 +1,68 @@
+.container2 {
+    background-image: url('../assets/images/settingbg.jpg'); /* Add your image path here */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+   
+  }
+
+.info {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .info strong {
+    margin-right: 10px;
+    text-align: left; /* Align label to the left */
+  }
+  .info span, .info input {
+    text-align: left; /* Align content to the left */
+    flex-grow: 1;
+    font-family: Arial, sans-serif;
+  }
+  .info input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  .info button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  #saveChangesBtn {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    display: none; /* Hide initially */
+  }
+  #logoutBtn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+
+  .profile-pic-container {
+    text-align: center; /* Center the profile picture and button */
+    margin-bottom: 20px;
+  }
+  .profile-pic {
+    border-radius: 50%; /* Make the profile picture circular */
+    width: 150px; /* Set a fixed size for the profile picture */
+    height: 150px;
+    object-fit: cover; /* Ensure the image covers the area */
+  }
