@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" style="border-radius: 50%;" type="image/x=icon" href="assets/images/webicon.png">
+    <title>MARIA's | LOGIN </title>
+    <link rel="stylesheet" href="assets/login style.css">
+</head>
+<body onload="myFunction2()">
+    <div id="loading"></div>
+    <div class="wrapper">
+        <h2>Set Username and Password</h2>
+        <center>
+        <form id="registerForm" action="#" method="POST">
+            <div class="input-group">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="input-group">
+                <span class="icon"> <ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+            </center>
+        </form>
+    </div>
+    <script>
+        var preloader = document.getElementById('loading');
+        function myFunction2() {
+            setTimeout(function() {
+                        preloader.style.display = 'none';
+                    }, 2000); // Hide after 2 seconds
+                }
+
+                
+        window.onbeforeunload = function(event) {
+                    // Check if the submit button was clicked
+                    if (event.target.activeElement.tagName !== 'BUTTON') {
+                        return "Data will be lost if you leave the page. Are you sure?";
+                    }
+                };
+
+                // Function to submit the form
+                function submitForm() {
+
+                }
+
+        document.addEventListener("DOMContentLoaded", function() {
+    // Function to validate username (can be customized further)
+    function validateUsername(username) {
+        // Example: Username must be at least 3 characters long
+        return username.length >= 3;
+    }
+
+    // Function to validate password (can be customized further)
+    function validatePassword(password) {
+        // Example: Password must be at least 6 characters long
+        return password.length >= 6;
+    }
+
+    // Function to handle form submission
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevents default form submission
+
+        // Get form inputs
+        const usernameInput = document.querySelector('input[name="username"]');
+        const passwordInput = document.querySelector('input[name="password"]');
+
+        // Get input values
+        const usernameValue = usernameInput.value.trim();
+        const passwordValue = passwordInput.value;
+
+        // Validate inputs
+        if (!validateUsername(usernameValue)) {
+            alert("Username must be at least 3 characters long.");
+            usernameInput.focus();
+            return;
+        }
+
+        if (!validatePassword(passwordValue)) {
+            alert("Password must be at least 6 characters long.");
+            passwordInput.focus();
+            return;
+        }
+
+        // If validation passes, you can proceed with form submission
+        alert("Form submitted successfully!");
+        // Replace alert with your actual form submission logic (e.g., sending data to server)
+    }
+
+    // Event listener for form submission
+    const form = document.getElementById('registerForm');
+    form.addEventListener('submit', handleSubmit);
+});
+
+
+
+    </script>
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
