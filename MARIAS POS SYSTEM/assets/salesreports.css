@@ -1,0 +1,67 @@
+/* MAIN */
+.rcontainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Base styles for the table */
+#receiptTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table */
+    font-size: small; /* Make the text font smaller */
+  }
+  
+  #receiptTable th,
+  #receiptTable td {
+    padding: 8px;
+    text-align: center; /* Center the text */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Styles for screens wider than 600px */
+  @media (min-width: 600px) {
+    #receiptTable th,
+    #receiptTable td {
+      padding: 15px;
+    }
+  }
+  
+  /* Styles for screens smaller than 600px */
+  @media (max-width: 599px) {
+    #receiptTable thead {
+      display: none; /* Hide the table header on small screens */
+    }
+  
+    #receiptTable,
+    #receiptTable tbody,
+    #receiptTable tr,
+    #receiptTable td {
+      display: block;
+      width: 100%;
+     
+    }
+  
+    #receiptTable tr {
+      margin-bottom: 15px;
+    }
+  
+    #receiptTable td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    #receiptTable td::before {
+      content: attr(data-label); /* Use data-label for content */
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  

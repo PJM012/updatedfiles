@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" style="border-radius: 50%;" type="image/x=icon" href="assets/images/webicon.png">
+    <title>MARIA's | LOGIN </title>
+    <link rel="stylesheet" href="assets/login style.css">
+</head>
+<body onload="myFunction2()">
+    <div id="loading"></div>
+    <div class="wrapper">
+        <form id="loginForm" action="submit-login.php">
+            <h2>Welcome <br>Back!</h2>
+            <div class="input-group">
+                <span class="icon">
+                    <ion-icon name="person"></ion-icon>
+                </span>
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <span class="icon">
+                    <ion-icon name="lock-closed"></ion-icon>
+                </span>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="forgot-pass">
+                <a href="ADMIN RESET PASS.html">Forgot Password?</a>
+            </div>
+            <button type="button" onclick="validateLogin()" class="btn3">Login</button>
+            <button type="submit" onclick="validateClick()" class="btn4">Create Account</button>
+        </form>
+    </div>
+    <script>
+        var preloader = document.getElementById('loading');
+        function myFunction2() {
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 2000); // Hide after 2 seconds
+        }
+
+        function validateLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            if (username.trim() === "" || password.trim() === "") {
+                alert("Please enter both username and password.");
+                return false;
+            } else if (username === correctUsername && password === correctPassword) {
+                document.getElementById('loginForm').submit();
+            } else {
+                alert("Incorrect Username or Password. Please Try Again.");
+                return false;
+            }
+        }
+
+        window.addEventListener('beforeunload', function (event) {
+            event.preventDefault();
+            event.returnValue = ''; // Empty string shows a generic confirmation message
+        });
+    </script>
+    <script>
+        function validateClick(){
+            window.location.href = "ACCOUNT CREATION.html";
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
